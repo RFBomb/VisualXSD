@@ -1,0 +1,12 @@
+<!-- This is in a file named GenerateSchemaFromXML.xml. -->
+<xsd 
+	xmlns='http://microsoft.com/dotnet/tools/xsd/'
+	output = 'MyOutputDirectory'
+	nologo = 'true'
+	>
+	<generateSchemas>
+		<!-- Specifies a XML Schema file to generate code for. Multiple XML files can be specified using multiple <xml> elements. -->
+		<!-- Note:  XSD.exe will determine how to process multiple files if there are multiple listed. Chances are that it will generate 1 schema encapsulating all files together. -->
+		<xml>IDItems</xml>
+	</generateSchemas>
+</xsd>

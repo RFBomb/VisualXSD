@@ -1,0 +1,10 @@
+<!-- This is in a file named GenerateSchemaFromXDR.xml. -->
+<xsd
+	xmlns='http://microsoft.com/dotnet/tools/xsd/'
+	output = 'MyOutputDirectory'
+	nologo = 'true'
+	>
+<generateSchemas>
+   <xdr>IDItems</xdr>
+</generateSchemas>
+</xsd>

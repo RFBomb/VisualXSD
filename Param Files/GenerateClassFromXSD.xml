@@ -1,0 +1,31 @@
+<!-- You must supply an .xsd file when typing in the command line.-->
+<!-- For example: xsd /p:genClasses mySchema.xsd -->
+
+<xsd 
+	xmlns='http://microsoft.com/dotnet/tools/xsd/' 
+	output = 'MyOutputDirectory'
+	nologo = 'true'
+	>
+	
+	<!-- Specify the language and NameSpace here -->
+	<generateClasses 
+		language='VB' 
+		namespace='Microsoft.Serialization.Examples'
+		enableDataBinding ='true'
+		enableLinqDataSet='true'
+		
+	>
+		<!-- Specify element(s) in the .xsd file to generate code for. -->
+		<element/>
+		
+		<!-- Specifies a type derived from the SchemaImporterExtension class. -->
+		<!-- https://docs.microsoft.com/en-us/dotnet/api/system.xml.serialization.advanced.schemaimporterextension -->
+		<schemaImporterExtensions/>
+		
+		<!-- Specifies a XML Schema file to generate code for. Multiple XML Schema files can be specified using multiple <schema> elements. -->
+		<schema/>
+
+	</generateClasses>
+</xsd>
+
+

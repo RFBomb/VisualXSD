@@ -1,0 +1,20 @@
+<!-- This is in a file named GenerateSchemas.xml. -->
+<xsd
+	xmlns='http://microsoft.com/dotnet/tools/xsd/'
+	output = 'MyOutputDirectory'
+	nologo = 'true'
+	>
+<generateSchemas>
+   <assembly>ConsoleApplication1.exe</assembly>
+</generateSchemas>
+</xsd>
+<!-- This is in a file named GenerateSchemaFromType.xml. -->
+<xsd
+	xmlns='http://microsoft.com/dotnet/tools/xsd/'
+	output = 'MyOutputDirectory'
+	nologo = 'true'
+	>
+	<generateSchemas>
+		<type>IDItems</type>
+	</generateSchemas>
+</xsd>
