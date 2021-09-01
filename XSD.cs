@@ -87,11 +87,14 @@ namespace XSD_Tool_Helper
                 addInputFiles = !this.ParameterFileContainsInputFiles;
                 result += String.Format(PARAMETERS, WrapPath(this.ParameterFilePath));
             }
-            
+
             if (addInputFiles)
                 foreach (FileInfo file in InputFilePaths)
+                {
+                    file.Refresh();
                     if (file.Exists)
                         result += String.Format(INFILE, WrapPath(file.FullName));
+                }
 
             if (!String.IsNullOrWhiteSpace(OutputDirectory))
                 result += String.Format(OUTFOLDER, WrapPath(OutputDirectory));

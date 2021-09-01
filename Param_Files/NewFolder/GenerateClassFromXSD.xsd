@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" targetNamespace="http://microsoft.com/dotnet/tools/xsd/" xmlns:mstns="http://microsoft.com/dotnet/tools/xsd/" xmlns="http://microsoft.com/dotnet/tools/xsd/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:element name="xsd">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="generateClasses" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="element" type="xs:string" minOccurs="0" msdata:Ordinal="0" />
+              <xs:element name="schemaImporterExtensions" type="xs:string" minOccurs="0" msdata:Ordinal="1" />
+              <xs:element name="schema" type="xs:string" minOccurs="0" msdata:Ordinal="2" />
+            </xs:sequence>
+            <xs:attribute name="language" form="unqualified" type="xs:string" />
+            <xs:attribute name="namespace" form="unqualified" type="xs:string" />
+            <xs:attribute name="enableDataBinding" form="unqualified" type="xs:string" />
+            <xs:attribute name="enableLinqDataSet" form="unqualified" type="xs:string" />
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="output" form="unqualified" type="xs:string" />
+      <xs:attribute name="nologo" form="unqualified" type="xs:string" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="xsd" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

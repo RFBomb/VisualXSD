@@ -75,13 +75,13 @@ namespace XSD_Tool_Helper
                 MessageBox.Show($"Invalid Characters Found in NameSpace! {Environment.NewLine} Please ensure that all characters are letters, underscores, or periods.", "Invalid NameSpace");
                 return false;
             }
-            ValidatedNameSpace = NameSpace;
-            if (NameSpace.Contains(" "))
+            ValidatedNameSpace = NameSpace.Trim();
+            if (ValidatedNameSpace.Contains(" "))
             {
                 DialogResult ask = MessageBox.Show("The NameSpace contains spaces, which are not allowed. Replace with underscores?", "Spaces Fonud - Replace?", MessageBoxButtons.YesNo);
                 if (ask == DialogResult.Yes)
                 {
-                    ValidatedNameSpace = NameSpace.Replace(" ", "_");
+                    ValidatedNameSpace = ValidatedNameSpace.Replace(" ", "_");
                     return true;
                 }
                 else

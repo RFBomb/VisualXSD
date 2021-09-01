@@ -95,7 +95,35 @@ namespace XSD_Tool_Helper
 
         public void Run() { }
 
-        public string[] GenerateCommand()
+        public string[] GenerateCommand(List<FileInfo> FileListToConvert, string DestinationFolder)
+        {
+            this.FileList = new();
+            foreach (FileInfo f in FileListToConvert)
+            {
+                string path = Path.Combine(DestinationFolder, Path.ChangeExtension(f.Name, ".XSD"));
+                FileList.Add(new FileInfo(path));
+            }
+            return GenerateCommand(false);
+        }
+
+        public void LoadParamFile() 
+        {
+            this.chk_DataBinding.Checked = false;
+            this.chk_Fields.Checked = false;
+            this.chk_LinqDataSet.Checked = false;
+            this.chk_Order.Checked = false;
+            this.chk_SuppressBanner.Checked = false;
+            this.txt_URI.Text = "";
+            this.radio_SerialClass.Checked = false;
+            this.radio_DataSetClass.Checked = !this.radio_SerialClass.Checked;
+            this.comboBox1.SelectedItem = "CS";
+            
+            this.listBox_Elements.Items.Clear();
+        }
+
+        public void GenerateParamFile() { }
+
+        public string[] GenerateCommand(bool UseParentControlFileList = true)
         {
             List<string> ret = new();
             //Setup the XMLProc object
@@ -117,12 +145,14 @@ namespace XSD_Tool_Helper
             builder.OutputDirectory = ParentControl.OutputFolder?.FullName;
             builder.GenerateParameterFile = ParentControl.GenerateParamFile;
 
-            FileList = new();
-
-            //Ensure all files are of XSD file extension
-            foreach (FileInfo file in ParentControl.InputFileList)
+            if (UseParentControlFileList)
             {
-                FileList.Add(new FileInfo(Path.ChangeExtension(file.FullName, ".XSD")));
+                //Ensure all files are of XSD file extension
+                FileList = new();
+                foreach (FileInfo file in ParentControl.InputFileList)
+                {
+                    FileList.Add(new FileInfo(Path.ChangeExtension(file.FullName, ".XSD")));
+                }
             }
 
             if (ParentControl.ProcessIndividually)

@@ -32,9 +32,6 @@ namespace XSD_Tool_Helper
             this.label1 = new System.Windows.Forms.Label();
             this.listbox_SelectedFiles = new System.Windows.Forms.ListBox();
             this.lbl_DestFileName = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radio_AsUnit = new System.Windows.Forms.RadioButton();
-            this.radio_Individual = new System.Windows.Forms.RadioButton();
             this.txt_DestName = new System.Windows.Forms.TextBox();
             this.btn_AddFiles = new System.Windows.Forms.Button();
             this.btn_Remove = new System.Windows.Forms.Button();
@@ -44,7 +41,6 @@ namespace XSD_Tool_Helper
             this.btn_Browse = new System.Windows.Forms.Button();
             this.txt_NameSpace = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -74,39 +70,6 @@ namespace XSD_Tool_Helper
             this.lbl_DestFileName.Size = new System.Drawing.Size(118, 15);
             this.lbl_DestFileName.TabIndex = 14;
             this.lbl_DestFileName.Text = "Destination Filename";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.radio_AsUnit);
-            this.groupBox1.Controls.Add(this.radio_Individual);
-            this.groupBox1.Location = new System.Drawing.Point(296, 118);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(178, 83);
-            this.groupBox1.TabIndex = 15;
-            this.groupBox1.TabStop = false;
-            // 
-            // radio_AsUnit
-            // 
-            this.radio_AsUnit.AutoSize = true;
-            this.radio_AsUnit.Location = new System.Drawing.Point(6, 47);
-            this.radio_AsUnit.Name = "radio_AsUnit";
-            this.radio_AsUnit.Size = new System.Drawing.Size(155, 19);
-            this.radio_AsUnit.TabIndex = 1;
-            this.radio_AsUnit.TabStop = true;
-            this.radio_AsUnit.Text = "Process as a single Entity";
-            this.radio_AsUnit.UseVisualStyleBackColor = true;
-            // 
-            // radio_Individual
-            // 
-            this.radio_Individual.AutoSize = true;
-            this.radio_Individual.Location = new System.Drawing.Point(6, 22);
-            this.radio_Individual.Name = "radio_Individual";
-            this.radio_Individual.Size = new System.Drawing.Size(129, 19);
-            this.radio_Individual.TabIndex = 0;
-            this.radio_Individual.TabStop = true;
-            this.radio_Individual.Text = "Process Individually";
-            this.radio_Individual.UseVisualStyleBackColor = true;
-            this.radio_Individual.CheckedChanged += new System.EventHandler(this.radio_Individual_CheckedChanged);
             // 
             // txt_DestName
             // 
@@ -147,9 +110,9 @@ namespace XSD_Tool_Helper
             // 
             // txt_DestFolder
             // 
-            this.txt_DestFolder.Location = new System.Drawing.Point(112, 3);
+            this.txt_DestFolder.Location = new System.Drawing.Point(120, 3);
             this.txt_DestFolder.Name = "txt_DestFolder";
-            this.txt_DestFolder.Size = new System.Drawing.Size(281, 23);
+            this.txt_DestFolder.Size = new System.Drawing.Size(273, 23);
             this.txt_DestFolder.TabIndex = 21;
             // 
             // label2
@@ -200,15 +163,12 @@ namespace XSD_Tool_Helper
             this.Controls.Add(this.btn_Remove);
             this.Controls.Add(this.btn_AddFiles);
             this.Controls.Add(this.txt_DestName);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lbl_DestFileName);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listbox_SelectedFiles);
             this.Name = "Control_FileList";
             this.Size = new System.Drawing.Size(480, 205);
             this.Load += new System.EventHandler(this.Control_FileList_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -219,9 +179,6 @@ namespace XSD_Tool_Helper
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox listbox_SelectedFiles;
         private System.Windows.Forms.Label lbl_DestFileName;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.RadioButton radio_AsUnit;
-        private System.Windows.Forms.RadioButton radio_Individual;
         private System.Windows.Forms.TextBox txt_DestName;
         private System.Windows.Forms.Button btn_AddFiles;
         private System.Windows.Forms.Button btn_Remove;

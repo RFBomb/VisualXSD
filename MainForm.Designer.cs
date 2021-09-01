@@ -115,9 +115,9 @@ namespace XSD_Tool_Helper
             // 
             // control_xsd1
             // 
-            this.control_xsd1.Location = new System.Drawing.Point(6, 6);
+            this.control_xsd1.Location = new System.Drawing.Point(3, 3);
             this.control_xsd1.Name = "control_xsd1";
-            this.control_xsd1.Size = new System.Drawing.Size(306, 176);
+            this.control_xsd1.Size = new System.Drawing.Size(732, 494);
             this.control_xsd1.TabIndex = 0;
             // 
             // tabPage3

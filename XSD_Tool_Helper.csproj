@@ -7,7 +7,72 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Param Files\Test\" />
+    <Compile Update="Param Files\Test\TestOutput\GenerateSchemaFromAssembly.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateSchemaFromAssembly.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param Files\Test\TestOutput\GenerateSchemaFromTypes.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateSchemaFromTypes.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param Files\Test\TestOutput\GenerateSchemaFromXDR.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateSchemaFromXDR.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param Files\Test\TestOutput\GenerateSchemaFromXML.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateSchemaFromXML.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param_Files\New folder\GenerateClassFromXSD.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateClassFromXSD.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param_Files\NewFolder\GenerateClassFromXSD.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateClassFromXSD.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Param_Files\NewFolder\GenerateClassFromXSD_Class.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>GenerateClassFromXSD_Class.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Param Files\Test\TestOutput\GenerateSchemaFromAssembly.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateSchemaFromAssembly.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param Files\Test\TestOutput\GenerateSchemaFromTypes.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateSchemaFromTypes.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param Files\Test\TestOutput\GenerateSchemaFromXDR.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateSchemaFromXDR.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param Files\Test\TestOutput\GenerateSchemaFromXML.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateSchemaFromXML.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param_Files\New folder\GenerateClassFromXSD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateClassFromXSD.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param_Files\NewFolder\GenerateClassFromXSD.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateClassFromXSD.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Param_Files\NewFolder\GenerateClassFromXSD_Class.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenerateClassFromXSD_Class.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

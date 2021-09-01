@@ -34,14 +34,10 @@ namespace XSD_Tool_Helper
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Radio_CreateClasses = new System.Windows.Forms.RadioButton();
             this.radio_CreateXSD = new System.Windows.Forms.RadioButton();
-            this.GroupBox_Params = new System.Windows.Forms.GroupBox();
-            this.btn_LoadConfig = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.chk_GenerateParamFile = new System.Windows.Forms.CheckBox();
             this.control_FileList1 = new XSD_Tool_Helper.Control_FileList();
             this.button1 = new System.Windows.Forms.Button();
+            this.control_ParameterFileGeneration1 = new XSD_Tool_Helper.Control_ParameterFileGeneration();
             this.groupBox1.SuspendLayout();
-            this.GroupBox_Params.SuspendLayout();
             this.SuspendLayout();
             // 
             // xsD_OptionControl1
@@ -87,55 +83,13 @@ namespace XSD_Tool_Helper
             this.radio_CreateXSD.Text = "Create XSD Only";
             this.radio_CreateXSD.UseVisualStyleBackColor = true;
             // 
-            // GroupBox_Params
-            // 
-            this.GroupBox_Params.Controls.Add(this.btn_LoadConfig);
-            this.GroupBox_Params.Controls.Add(this.checkBox1);
-            this.GroupBox_Params.Controls.Add(this.chk_GenerateParamFile);
-            this.GroupBox_Params.Location = new System.Drawing.Point(173, 212);
-            this.GroupBox_Params.Name = "GroupBox_Params";
-            this.GroupBox_Params.Size = new System.Drawing.Size(436, 71);
-            this.GroupBox_Params.TabIndex = 17;
-            this.GroupBox_Params.TabStop = false;
-            this.GroupBox_Params.Text = "Parameter File Options";
-            // 
-            // btn_LoadConfig
-            // 
-            this.btn_LoadConfig.Location = new System.Drawing.Point(291, 23);
-            this.btn_LoadConfig.Name = "btn_LoadConfig";
-            this.btn_LoadConfig.Size = new System.Drawing.Size(139, 23);
-            this.btn_LoadConfig.TabIndex = 15;
-            this.btn_LoadConfig.Text = "Load Parameter File";
-            this.btn_LoadConfig.UseVisualStyleBackColor = true;
-            this.btn_LoadConfig.Click += new System.EventHandler(this.btn_LoadConfig_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(6, 46);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(201, 19);
-            this.checkBox1.TabIndex = 17;
-            this.checkBox1.Text = "Parameter File Contains FilePaths";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // chk_GenerateParamFile
-            // 
-            this.chk_GenerateParamFile.AutoSize = true;
-            this.chk_GenerateParamFile.Location = new System.Drawing.Point(6, 21);
-            this.chk_GenerateParamFile.Name = "chk_GenerateParamFile";
-            this.chk_GenerateParamFile.Size = new System.Drawing.Size(178, 19);
-            this.chk_GenerateParamFile.TabIndex = 16;
-            this.chk_GenerateParamFile.Text = "Generate New Parameter File";
-            this.chk_GenerateParamFile.UseVisualStyleBackColor = true;
-            this.chk_GenerateParamFile.CheckedChanged += new System.EventHandler(this.chk_GenerateParamFile_CheckedChanged);
-            // 
             // control_FileList1
             // 
             this.control_FileList1.DestFolder = null;
             this.control_FileList1.FileType = XSD_Tool_Helper.Control_FileList.FileTypes.XML;
             this.control_FileList1.Location = new System.Drawing.Point(13, 3);
             this.control_FileList1.Name = "control_FileList1";
+            this.control_FileList1.NameSpace = "";
             this.control_FileList1.Size = new System.Drawing.Size(481, 205);
             this.control_FileList1.TabIndex = 18;
             // 
@@ -149,13 +103,20 @@ namespace XSD_Tool_Helper
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // control_ParameterFileGeneration1
+            // 
+            this.control_ParameterFileGeneration1.Location = new System.Drawing.Point(173, 214);
+            this.control_ParameterFileGeneration1.Name = "control_ParameterFileGeneration1";
+            this.control_ParameterFileGeneration1.Size = new System.Drawing.Size(438, 72);
+            this.control_ParameterFileGeneration1.TabIndex = 19;
+            // 
             // Control_XML
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.control_ParameterFileGeneration1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.control_FileList1);
-            this.Controls.Add(this.GroupBox_Params);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.xsD_OptionControl1);
             this.Name = "Control_XML";
@@ -163,8 +124,6 @@ namespace XSD_Tool_Helper
             this.Load += new System.EventHandler(this.Control_XML_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.GroupBox_Params.ResumeLayout(false);
-            this.GroupBox_Params.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -176,10 +135,7 @@ namespace XSD_Tool_Helper
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton Radio_CreateClasses;
         private System.Windows.Forms.RadioButton radio_CreateXSD;
-        private System.Windows.Forms.GroupBox GroupBox_Params;
-        private System.Windows.Forms.Button btn_LoadConfig;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox chk_GenerateParamFile;
         private System.Windows.Forms.Button button1;
+        private Control_ParameterFileGeneration control_ParameterFileGeneration1;
     }
 }

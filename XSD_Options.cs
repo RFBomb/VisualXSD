@@ -17,15 +17,15 @@ namespace XSD_Tool_Helper
         private const string GENERATE_CLASSES = " /classes";
         private const string GENERATE_DATASET = " /dataset";
         //private const string OUTFOLDER = " /out:{0}"; // DO NOT USE -> Use OUTFOLDER instead
-        private const string LANGUAGE = " /language:{0}";
-        private const string NAMESPACE = " /namespace:{0}";
+        private const string LANGUAGE = " /language:\"{0}\"";
+        private const string NAMESPACE = " /namespace:\"{0}\"";
 
-        private const string OPT_ELEMENT = " /element{0}";
-        private const string OPT_URI = " /uri:{0}";
+        private const string OPT_ELEMENT = " /element\"{0}\"";
+        private const string OPT_URI = " /uri:\"{0}\"";
 
         //Bool Options
-        private const string OPT_ENABLEDATABINDING = " /enabledDataBinding";
-        private const string OPT_ENABLELINQDATASET = " /enabledLinqDataSet";
+        private const string OPT_ENABLEDATABINDING = " /enableDataBinding";
+        private const string OPT_ENABLELINQDATASET = " /enableLinqDataSet";
         private const string OPT_FIELDS = " /fields";
         private const string OPT_SUPPRESSBANNER = " /nologo";
         private const string OPT_ORDER = " /order";
@@ -54,7 +54,7 @@ namespace XSD_Tool_Helper
         /// </summary>
         public bool EnableLinqDataSet { get; set; } = false;
 
-        /// <summary> Generate Field values instead of Property values for the output class(es) </summary>
+        /// <summary> Generate Field values instead of Property values for the output class(es) </summary>  
         public bool GenerateFieldsInsteadOfProperties { get; set; } = false;
 
         /// <summary> Toggles the 'NoLogo' option </summary>
@@ -72,7 +72,7 @@ namespace XSD_Tool_Helper
             string result = base.GenerateCommand();
             if (this.WhatToGenerate == Generate.NOTHING) return result;
 
-            result = (WhatToGenerate == Generate.CLASSES) ? GENERATE_CLASSES : GENERATE_DATASET;
+            result += (WhatToGenerate == Generate.CLASSES) ? GENERATE_CLASSES : GENERATE_DATASET;
             result += String.Format(LANGUAGE, XSD.LanguageEnumToString(this.Language));
             result += EnableDataBinding ? OPT_ENABLEDATABINDING : "";
             result += EnableLinqDataSet ? OPT_ENABLELINQDATASET : "";
@@ -89,7 +89,6 @@ namespace XSD_Tool_Helper
 
         public override void GenerateParamFile()
         {
-
         }
 
     }

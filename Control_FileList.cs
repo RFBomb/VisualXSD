@@ -26,11 +26,20 @@ namespace XSD_Tool_Helper
 
         private List<FileInfo> FileList { get; set; } = new List<FileInfo>();
 
-        public bool ProcessIndividually => this.radio_Individual.Checked;
+        public bool ProcessIndividually => false; // this.radio_Individual.Checked;
 
         public FileTypes FileType { get; set; }
 
-        public DirectoryInfo DestFolder { get; set; }
+        private DirectoryInfo destFolder;
+        public DirectoryInfo DestFolder 
+        {
+            get => destFolder;
+            set 
+            {
+                destFolder = value;
+                this.txt_DestFolder.Text = (destFolder != null) ? destFolder.FullName : "";
+            }
+        }
 
         public string NameSpace
         {
@@ -40,6 +49,27 @@ namespace XSD_Tool_Helper
 
         public string OutputFileName => this.txt_DestName.Text;
 
+        /// <summary>
+        /// Clears the List of files displayed in the listbox.
+        /// </summary>
+        public void ClearFileList()
+        {
+            this.FileList = new();
+            this.RefreshDisplayList();
+        }
+
+        /// <summary>
+        /// Clears the List of files displayed in the listbox.
+        /// </summary>
+        public void AddToFileList(FileInfo FileToAdd)
+        {
+            this.FileList.Add(FileToAdd);
+        }
+
+        /// <summary>
+        /// Returns a new list of file paths that have the extension specified by the control's FileType property. 
+        /// </summary>
+        /// <returns></returns>
         public List<FileInfo> GetFileList()
         {
             List<FileInfo> ret = new List<FileInfo>();
@@ -61,6 +91,12 @@ namespace XSD_Tool_Helper
             return ret;
         }
 
+        /// <summary>
+        /// Shortcut method to change the extension of a FileName
+        /// </summary>
+        /// <param name="InputString"></param>
+        /// <param name="Ext"></param>
+        /// <returns></returns>
         private string ChangeExtension(string InputString, string Ext)
         {
             if (Path.HasExtension(InputString))
@@ -80,15 +116,19 @@ namespace XSD_Tool_Helper
             RefreshDisplayList();
         }
 
+        /// <summary>
+        /// Refrshes the ListBox that displays the FileList property.
+        /// </summary>
         private void RefreshDisplayList()
         {
             this.listbox_SelectedFiles.DataSource = new BindingSource(FileList, null);
             this.listbox_SelectedFiles.DisplayMember = ".Name";
-            if (FileList.Count > 1 && this.radio_Individual.Checked)
+            if (FileList.Count > 1 && this.ProcessIndividually)
                 this.txt_DestName.ReadOnly = true;
             else
                 this.txt_DestName.ReadOnly = false;
         }
+
 
         private List<FileInfo> GetFiles() 
         {
@@ -117,16 +157,13 @@ namespace XSD_Tool_Helper
         {
             DialogResult ask = MessageBox.Show(this, "Remove all files from the listbox?", "Are you sure?", MessageBoxButtons.YesNo);
             if (ask == DialogResult.Yes)
-            {
-                this.FileList.Clear();
-                RefreshDisplayList();
-            }
+                this.ClearFileList();
         }
 
         private void Control_FileList_Load(object sender, EventArgs e)
         {
             RefreshDisplayList();
-            this.radio_Individual.Checked = true;
+            //this.radio_Individual.Checked = true;
         }
 
         private void radio_Individual_CheckedChanged(object sender, EventArgs e)
